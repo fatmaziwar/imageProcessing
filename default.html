@@ -1,0 +1,186 @@
+<html>
+    <title>Image Processing API </title>
+    <header> 
+       
+    </header>
+<body margin: 0px; background: #0e0e0e;>
+
+<h1 style="color:rgb(41, 41, 107);">Image Resizing API using Nodejs & Sharp</h1>
+<form>
+
+    <table align="center">
+        <tr>
+            <h3 style="color:rgb(64, 64, 175);"> 
+        Resizing Image using Nodejs, Express, Jasmine & Sharp <br>
+        Author: Fatma Ziwar <br>
+        February 2022 <br>
+        Provided below some available images for resizing, please enter in the text fields below the selected image a Width and a Height to resize the Image accordingly. Then, click on the Button to check and apply resizing.<br>
+        </h3>
+        </tr>
+        <tr>
+            <td><div>
+           
+                <img  src="../images/full/fjord.jpg" alt="first image" width="200" height="200">
+                
+                </div>
+            </td>
+            <td><div>
+           
+                <img  src="../images/full/encenadaport.jpg" alt="second image" width="200" height="200">
+                
+                </div>
+            </td>
+            <td><div>
+           
+                <img  src="../images/full/icelandwaterfall.jpg" alt="third image" width="200" height="200">
+                
+                </div>
+            </td>
+            <td><div>
+           
+                <img  src="../images/full/palmtunnel.jpg" alt="fourth image" width="200" height="200">
+                
+                </div>
+            </td>
+            <td><div>
+           
+                <img  src="../images/full/santamonica.jpg" alt="random image" width="200" height="200">
+                
+                </div>
+            </td>
+        
+        </tr>
+      
+        
+        <tr>
+            <td>
+                
+                    <input id="txtWidth1" type="text">
+                    <input id="txtheight1" type="text">
+                    <input id="btn1" type="button" value="Resize Image">         
+                    
+                    <script type="text/javascript">
+                    
+                    const txtWidth1 = document.querySelector('#txtWidth1');
+                    const txtheight1 = document.querySelector('#txtheight1');
+                    const btn1 = document.querySelector('#btn1');
+                    btn1.addEventListener('click', clickButton);
+                
+                    function clickButton() {
+                    var URL = "http://localhost:3000/api/resizeImg?imgname=fjord.jpg&width=" + txtWidth1.value+"&height="+ txtheight1.value;
+                    var win = window.open(URL, "_blank");
+                    }
+                    </script>
+            </td>
+        
+            <td>
+               
+                    <input id="txtWidth2" type="text">
+                    <input id="txtheight2" type="text">
+                    <input id="btn2" type="button" value="Resize Image">              
+                                       
+                    <script type="text/javascript">            
+                    const txtWidth2 = document.querySelector('#txtWidth2');
+                    const txtheight2 = document.querySelector('#txtheight2');
+                    const btn2 = document.querySelector('#btn2');
+                    btn2.addEventListener('click', clickButton2);        
+                    function clickButton2() {
+                    var URL2 = "http://localhost:3000/api/resizeImg?imgname=encenadaport.jpg&width=" + txtWidth2.value+"&height="+ txtheight2.value;
+                    var win2 = window.open(URL2, "_blank");
+                    }
+                    </script>
+            </td>
+            <td>
+               
+                <input id="txtWidth3" type="text">
+                <input id="txtheight3" type="text">
+                <input id="btn3" type="button" value="Resize Image">              
+                                   
+                <script type="text/javascript">            
+                const txtWidth3 = document.querySelector('#txtWidth3');
+                const txtheight3 = document.querySelector('#txtheight3');
+                const btn3 = document.querySelector('#btn3');
+                btn3.addEventListener('click', clickButton3);        
+                function clickButton3() {
+                var URL3 = "http://localhost:3000/api/resizeImg?imgname=icelandwaterfall.jpg&width=" + txtWidth3.value+"&height="+ txtheight3.value;
+                var win3 = window.open(URL3, "_blank");
+                }
+                </script>
+            </td>
+        
+            <td>
+                
+                <input id="txtWidth4" type="text">
+                <input id="txtheight4" type="text">
+                <input id="btn4" type="button" value="Resize Image">              
+                                
+                <script type="text/javascript">            
+                const txtWidth4 = document.querySelector('#txtWidth4');
+                const txtheight4 = document.querySelector('#txtheight4');
+                const btn4 = document.querySelector('#btn4');
+                btn4.addEventListener('click', clickButton4);        
+                function clickButton4() {
+                var URL4 = "http://localhost:3000/api/resizeImg?imgname=palmtunnel.jpg&width=" + txtWidth4.value+"&height="+ txtheight4.value;
+                var win4 = window.open(URL4, "_blank");
+                }
+                </script>
+             </td>
+             <td>
+                
+                <input id="txtWidth5" type="text">
+                <input id="txtheight5" type="text">
+                <input id="btn5" type="button" value="Resize Image">              
+                                
+                <script type="text/javascript">            
+                const txtWidth5 = document.querySelector('#txtWidth5');
+                const txtheight5 = document.querySelector('#txtheight5');
+                const btn5 = document.querySelector('#btn5');
+                btn5.addEventListener('click', clickButton5);        
+                function clickButton5() {
+                var URL5 = "http://localhost:3000/api/resizeImg?imgname=santamonica.jpg&width=" + txtWidth5.value+"&height="+ txtheight5.value;
+                var win5 = window.open(URL5, "_blank");
+                }
+                </script>
+             </td>
+        
+            </tr>
+
+        <tr align="center" >
+            <td colspan="5">
+                <br>
+                <br>
+
+                <label for="txtName" >File Name</label>
+                <input id="txtName" type="text">
+                <br>
+                <label for="txtWidth15" >Width</label>
+                <input id="txtWidth15" type="text">
+                <br>
+                <label for="txtheight15" >Height</label>
+                <input id="txtheight15" type="text">
+                <br>
+                <input id="btn15" type="button" value="Apply Image Resizing">              
+                                
+                <script type="text/javascript">            
+                const txtName = document.querySelector('#txtName');
+                const txtWidth15 = document.querySelector('#txtWidth15');
+                const txtheight15 = document.querySelector('#txtheight15');
+                const btn15 = document.querySelector('#btn15');
+                btn15.addEventListener('click', clickButton15);        
+                function clickButton15() {
+                var URL15 = "http://localhost:3000/api/resizeImg?imgname=" + txtName.value + "&width=" + txtWidth15.value+"&height="+ txtheight15.value;
+                var win15 = window.open(URL15, "_blank");
+                }
+                </script>
+             </td>
+        </tr>
+        
+        
+        </table>
+        
+</form>
+
+
+</body>
+</html>
+
